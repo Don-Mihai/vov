@@ -1,0 +1,26 @@
+.title {
+  padding: 5px 20px 5px 30px;
+  margin-left: -10px;
+  border-top-right-radius: 18px;
+  border-bottom-right-radius: 18px;
+  background: #782122;
+  color: #fff;
+  width: fit-content;
+  font-size: 36px;
+}
+
+.leftColumn {
+  grid-area: 1 / 1 / 8 / 2;
+}
+
+.rightColumn {
+  grid-area: 1 / 2 / 8 / 3;
+}
+
+.image {
+  max-height: 70%;
+}
+
+.description {
+  overflow-y: auto;
+}

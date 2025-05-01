@@ -1,0 +1,89 @@
+import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
+import Slider from 'react-slick';
+import styles from './PodMain.module.css';
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+import Bottom from '../Bottom/Bottom';
+
+function NextArrow({ className, style, onClick }) {
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', right: '1rem', zIndex: 2 }}
+      onClick={onClick}
+    />
+  );
+}
+
+function PrevArrow({ className, style, onClick }) {
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: 'block', left: '1rem', zIndex: 2 }}
+      onClick={onClick}
+    />
+  );
+}
+
+export default function PodMain({ title, slides, tabs }) {
+  const navigate = useNavigate();
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const [activeTab, setActiveTab] = useState(tabs[0].id);
+
+  const sliderSettings = {
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    arrows: true, // включаем стрелки
+    nextArrow: <NextArrow />, // используем кастомную кнопку «вперед»
+    prevArrow: <PrevArrow />,
+    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
+  };
+
+  return (
+    <div className={'container'}>
+      <div className={'leftColumn'}>
+        <h3 className={styles.title}>{title}</h3>
+        <Slider {...sliderSettings} className={styles.slider}>
+          {slides.map((slide) => (
+            <div key={slide.id}>
+              <img
+                src={slide.src}
+                alt={slide.title}
+                className={styles.slideImage}
+              />
+            </div>
+          ))}
+        </Slider>
+        <h2 className={styles.slideTitle}>{slides[currentSlide].title}</h2>
+      </div>
+
+      <div className={'rightColumn'}>
+        <h3 className={styles.subtitle}>
+          выберите раздел, чтобы узнать подробнее
+        </h3>
+        <div className={styles.tabs}>
+          {tabs.map((tab) => (
+            <button
+              key={tab.id}
+              className={`${styles.tabButton} ${
+                activeTab === tab.id ? styles.activeTab : ''
+              }`}
+              onClick={() => setActiveTab(tab.id)}
+            >
+              {tab.label}
+            </button>
+          ))}
+        </div>
+        <div className={styles.tabContent}>
+          {tabs.find((tab) => tab.id === activeTab)?.content}
+        </div>
+      </div>
+
+      <Bottom backUrl={'/main'} />
+    </div>
+  );
+}
