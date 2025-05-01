@@ -45,7 +45,7 @@ export default function PodMain({ title, slides, tabs }) {
 
   return (
     <div className={'container'}>
-      <div className={'leftColumn'}>
+      <div className={'leftColumn' + ' ' + styles.column}>
         <h3 className={styles.title}>{title}</h3>
         <Slider {...sliderSettings} className={styles.slider}>
           {slides.map((slide) => (
