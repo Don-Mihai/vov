@@ -30,6 +30,7 @@ export default function PodMain({ title, slides, tabs }) {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeTab, setActiveTab] = useState(tabs[0].id);
+  const [dragging, setDragging] = useState(false);
 
   const sliderSettings = {
     dots: true,
@@ -40,7 +41,21 @@ export default function PodMain({ title, slides, tabs }) {
     arrows: true, // включаем стрелки
     nextArrow: <NextArrow />, // используем кастомную кнопку «вперед»
     prevArrow: <PrevArrow />,
-    beforeChange: (oldIndex, newIndex) => setCurrentSlide(newIndex),
+    beforeChange: () => {
+      // Начало перелистывания
+      setDragging(true);
+    },
+    afterChange: (index) => {
+      // Конец перелистывания
+      setDragging(false);
+      setCurrentSlide(index);
+    },
+  };
+
+  const handleSlideClick = (link) => {
+    if (!dragging) {
+      navigate(link);
+    }
   };
 
   return (
@@ -54,6 +69,7 @@ export default function PodMain({ title, slides, tabs }) {
                 src={slide.src}
                 alt={slide.title}
                 className={styles.slideImage}
+                onClick={() => handleSlideClick(slide.link)}
               />
             </div>
           ))}

@@ -1,9 +1,24 @@
 import PodMain from '../../components/PodMain/PodMain';
 
 const slides = [
-  { id: 1, src: '/path/to/image1.jpg', title: 'Вооружение 1' },
-  { id: 2, src: '/path/to/image2.jpg', title: 'Вооружение 2' },
-  { id: 3, src: '/path/to/image3.jpg', title: 'Вооружение 3' },
+  {
+    id: 1,
+    src: '/images/russian-equipment.png',
+    title: 'Вооружение 1',
+    link: '/foreign-item/1',
+  },
+  {
+    id: 2,
+    src: '/images/russian-equipment.png',
+    title: 'Вооружение 2',
+    link: '/foreign-item/2',
+  },
+  {
+    id: 3,
+    src: '/images/russian-equipment.png',
+    title: 'Вооружение 3',
+    link: '/foreign-item/3',
+  },
 ];
 
 const tabs = [

@@ -1,9 +1,30 @@
 import PodMain from '../../components/PodMain/PodMain';
 
-const slides = [
-  { id: 1, src: '/images/russian-equipment.png', title: 'Вооружение 1' },
-  { id: 2, src: '/images/russian-equipment.png', title: 'Вооружение 2' },
-  { id: 3, src: '/images/russian-equipment.png', title: 'Вооружение 3' },
+export const slidesRussian = [
+  {
+    id: 1,
+    src: '/images/russian-equipment.png',
+    title: 'Вооружение 1',
+    link: '/russian-item/1',
+    description:
+      'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+  },
+  {
+    id: 2,
+    src: '/images/russian-equipment.png',
+    title: 'Вооружение 2',
+    link: '/russian-item/2',
+    description:
+      'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+  },
+  {
+    id: 3,
+    src: '/images/russian-equipment.png',
+    title: 'Вооружение 3',
+    link: '/russian-item/3',
+    description:
+      'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+  },
 ];
 
 const tabs = [
@@ -14,7 +35,11 @@ const tabs = [
 
 const RussianEquip = () => {
   return (
-    <PodMain title={'ВООРУЖЕНИЕ ПРОТИВНИКА'} slides={slides} tabs={tabs} />
+    <PodMain
+      title={'ВООРУЖЕНИЕ ПРОТИВНИКА'}
+      slides={slidesRussian}
+      tabs={tabs}
+    />
   );
 };
 
