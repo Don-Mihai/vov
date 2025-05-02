@@ -25,9 +25,16 @@ export default function Preview() {
       />
 
       <div className={styles.overlay}>
-        <h1 className={styles.title}>Современное вооружение</h1>
+        <div className={styles.top}>
+          <img src="/images/elipse.png" alt="Логотип" />
+          <h1 className={styles.title}>
+            Современное <br /> вооружение
+          </h1>
+          <img src="/images/elipse.png" alt="Логотип" />
+        </div>
+
         <p className={styles.subtitle}>
-          Коснитесь экрана, чтобы узнать подробнее
+          Коснитесь экрана, <br /> чтобы узнать подробнее
         </p>
       </div>
     </div>
