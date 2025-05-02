@@ -1,35 +1,95 @@
 import PodMain from '../../components/PodMain/PodMain';
+import { tabs } from '../../utils';
 
-const slides = [
-  {
-    id: 1,
-    src: '/images/russian-equipment.png',
-    title: 'Вооружение 1',
-    link: '/foreign-item/1',
-  },
-  {
-    id: 2,
-    src: '/images/russian-equipment.png',
-    title: 'Вооружение 2',
-    link: '/foreign-item/2',
-  },
-  {
-    id: 3,
-    src: '/images/russian-equipment.png',
-    title: 'Вооружение 3',
-    link: '/foreign-item/3',
-  },
-];
-
-const tabs = [
-  { id: 'aviation', label: 'Авиация', content: 'Контент для авиации' },
-  { id: 'tanks', label: 'Танки', content: 'Контент для танков' },
-  { id: 'infantry', label: 'Пехота', content: 'Контент для пехоты' },
+export const slidesForeign = [
+  [
+    {
+      id: 1,
+      src: '/images/russian-equipment.png',
+      title: 'авиация 1',
+      link: '/russian-item/1/0',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+    {
+      id: 2,
+      src: '/images/russian-equipment.png',
+      title: 'авиация 2',
+      link: '/russian-item/2/0',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+    {
+      id: 3,
+      src: '/images/russian-equipment.png',
+      title: 'авиация 3',
+      link: '/russian-item/3/0',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+  ],
+  [
+    {
+      id: 1,
+      src: '/images/russian-equipment.png',
+      title: 'танки 1',
+      link: '/russian-item/1/1',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+    {
+      id: 2,
+      src: '/images/russian-equipment.png',
+      title: 'танки 2',
+      link: '/russian-item/2/1',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+    {
+      id: 3,
+      src: '/images/russian-equipment.png',
+      title: 'танки 3',
+      link: '/russian-item/3/1',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+  ],
+  [
+    {
+      id: 1,
+      src: '/images/russian-equipment.png',
+      title: 'пехота 1',
+      link: '/russian-item/1/2',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+    {
+      id: 2,
+      src: '/images/russian-equipment.png',
+      title: 'пехота 2',
+      link: '/russian-item/2/2',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+    {
+      id: 3,
+      src: '/images/russian-equipment.png',
+      title: 'пехота 3',
+      link: '/russian-item/3/2',
+      description:
+        'Описание подробное Описание подробное Описание подробное Описание подробное Описание подробное  Описание подробное Описание подробное Описание подробное Описание подробное',
+    },
+  ],
 ];
 
 const ForeignEquip = () => {
   return (
-    <PodMain title={'РОССИЙСКОЕ ВООРУЖЕНИЕ'} slides={slides} tabs={tabs} />
+    <PodMain
+      titleColor={'#333E6F'}
+      title={'ВООРУЖЕНИЕ ПРОТИВНИКА'}
+      slides={slidesForeign}
+      tabs={tabs}
+    />
   );
 };
 

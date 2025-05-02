@@ -12,7 +12,7 @@ export default function ItemEquip({ title, description, src }) {
       </div>
       <div className={'rightColumn'}></div>
 
-      <Bottom backUrl={'/main'} />
+      <Bottom backUrl={-1} />
     </div>
   );
 }

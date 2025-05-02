@@ -44,7 +44,7 @@ export default function Main() {
         </div>
       </div>
 
-      <Bottom backUrl={'/preview'} />
+      <Bottom backUrl={'/'} />
     </div>
   );
 }

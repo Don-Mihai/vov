@@ -26,7 +26,7 @@ function PrevArrow({ className, style, onClick }) {
   );
 }
 
-export default function PodMain({ title, slides, tabs }) {
+export default function PodMain({ titleColor, title, slides, tabs }) {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeTab, setActiveTab] = useState(tabs[0].id);
@@ -57,13 +57,13 @@ export default function PodMain({ title, slides, tabs }) {
       navigate(link);
     }
   };
-
+  console.log(slides, activeTab);
   return (
-    <div className={'container'}>
+    <div className={'container'} style={{ '--title-bg-color': titleColor }}>
       <div className={'leftColumn' + ' ' + styles.column}>
         <h3 className={styles.title}>{title}</h3>
         <Slider {...sliderSettings} className={styles.slider}>
-          {slides.map((slide) => (
+          {slides[activeTab].map((slide) => (
             <div key={slide.id}>
               <img
                 src={slide.src}
@@ -74,7 +74,9 @@ export default function PodMain({ title, slides, tabs }) {
             </div>
           ))}
         </Slider>
-        <h2 className={styles.slideTitle}>{slides[currentSlide].title}</h2>
+        <h2 className={styles.slideTitle}>
+          {slides[activeTab][currentSlide].title}
+        </h2>
       </div>
 
       <div className={'rightColumn'}>
@@ -94,9 +96,7 @@ export default function PodMain({ title, slides, tabs }) {
             </button>
           ))}
         </div>
-        <div className={styles.tabContent}>
-          {tabs.find((tab) => tab.id === activeTab)?.content}
-        </div>
+        <div></div>
       </div>
 
       <Bottom backUrl={'/main'} />

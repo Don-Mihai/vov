@@ -3,7 +3,7 @@
   margin-left: -10px;
   border-top-right-radius: 18px;
   border-bottom-right-radius: 18px;
-  background: #782122;
+  background: var(--title-bg-color);
   color: #fff;
   width: fit-content;
   font-size: 36px;
@@ -57,7 +57,7 @@
 }
 
 .activeTab {
-  background: #bb4042;
+  background: var(--title-bg-color);
   color: #fff;
 }
 
