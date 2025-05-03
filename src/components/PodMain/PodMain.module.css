@@ -82,6 +82,7 @@
 .slideTitle {
   text-align: center;
   margin-top: 40px;
+  text-transform: uppercase;
 }
 
 .tabs {
@@ -101,6 +102,7 @@
   background-color: transparent;
   transition: background-color 0.3s ease;
   font-size: 23px;
+  text-transform: uppercase;
 }
 
 .activeTab {
@@ -127,4 +129,5 @@
   font-size: 23px;
   background: var(--title-bg-color);
   z-index: 10;
+  text-transform: uppercase;
 }

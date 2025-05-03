@@ -7,10 +7,12 @@
 }
 
 .backButton {
+  text-transform: uppercase;
 }
 
 .hideButton {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  text-transform: uppercase;
 }
