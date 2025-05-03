@@ -8,21 +8,17 @@ import Bottom from '../Bottom/Bottom';
 
 function NextArrow({ className, style, onClick }) {
   return (
-    <div
-      className={`${className} ${styles.arrow}`}
-      style={{ ...style, display: 'block', right: '1rem', zIndex: 2 }}
-      onClick={onClick}
-    />
+    <div className={`${styles.arrow} ${styles.nextArrow}`} onClick={onClick}>
+      <img src={'/images/arrow.png'} alt="Next" className={styles.arrowIcon} />
+    </div>
   );
 }
 
 function PrevArrow({ className, style, onClick }) {
   return (
-    <div
-      className={`${className} ${styles.arrow}`}
-      style={{ ...style, display: 'block', left: '1rem', zIndex: 2 }}
-      onClick={onClick}
-    />
+    <div className={`${styles.arrow} ${styles.prevArrow}`} onClick={onClick}>
+      <img src={'/images/arrow.png'} alt="Next" className={styles.arrowIcon} />
+    </div>
   );
 }
 
@@ -74,6 +70,7 @@ export default function PodMain({ titleColor, title, slides, tabs }) {
             </div>
           ))}
         </Slider>
+        <button className={styles.buttonDetail}>Подробнее</button>
         <h2 className={styles.slideTitle}>
           {slides[activeTab][currentSlide].title}
         </h2>

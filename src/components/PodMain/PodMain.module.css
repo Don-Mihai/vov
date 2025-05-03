@@ -1,4 +1,5 @@
 .title {
+  width: 100%;
   padding: 5px 20px 5px 30px;
   margin-left: -10px;
   border-top-right-radius: 18px;
@@ -9,6 +10,7 @@
 }
 
 .subtitle {
+  margin-top: -20px;
   margin-bottom: 10px;
   text-align: center;
   text-transform: uppercase;
@@ -27,6 +29,11 @@
   width: 560px;
   height: 583px;
   margin: 0 auto;
+  margin-top: 56px;
+  border: 6px solid #fcbd59;
+  border-radius: 0 0 40px 40px;
+  box-shadow: 0 4px 8px 2px rgba(0, 0, 0, 0.2),
+    0 6px 20px 2px rgba(0, 0, 0, 0.19);
 }
 
 .slide {
@@ -39,15 +46,42 @@
   object-fit: cover;
   margin: 0 auto;
 }
+/* Кастомные стрелки */
+
 .arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
   background-color: #153415;
-  color: #000;
-  height: 100px;
-  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  z-index: 2;
 }
+
+.arrowIcon {
+  width: 29px;
+  margin-bottom: -10px;
+  object-fit: contain;
+  /* filter: invert(1); */
+}
+
+.nextArrow {
+  right: -35px;
+}
+
+.prevArrow {
+  left: -35px;
+  transform: translateY(-50%) rotate(180deg);
+}
+
 .slideTitle {
   text-align: center;
-  margin-top: 20px;
+  margin-top: 40px;
 }
 
 .tabs {
@@ -79,4 +113,18 @@
   border: 1px solid #ccc;
   min-height: 100px;
   background: #fafafa;
+}
+
+.buttonDetail {
+  margin-top: -20px;
+
+  border: none;
+  color: #fff;
+  padding: 2px 30px;
+  border-radius: 93px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 23px;
+  background: var(--title-bg-color);
+  z-index: 10;
 }

@@ -102,9 +102,17 @@ body {
 }
 
 .leftColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   grid-area: 1 / 1 / 8 / 2;
 }
 
 .rightColumn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
   grid-area: 1 / 2 / 8 / 3;
 }
