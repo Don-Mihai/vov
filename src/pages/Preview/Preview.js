@@ -13,7 +13,7 @@ export default function Preview() {
     <div
       className={styles.container}
       onClick={handleClick}
-      onTouchStart={handleClick}
+      // onTouchStart={handleClick}
     >
       <video
         className={styles.video}

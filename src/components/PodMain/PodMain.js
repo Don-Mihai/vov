@@ -9,7 +9,7 @@ import Bottom from '../Bottom/Bottom';
 function NextArrow({ className, style, onClick }) {
   return (
     <div
-      className={className}
+      className={`${className} ${styles.arrow}`}
       style={{ ...style, display: 'block', right: '1rem', zIndex: 2 }}
       onClick={onClick}
     />
@@ -19,7 +19,7 @@ function NextArrow({ className, style, onClick }) {
 function PrevArrow({ className, style, onClick }) {
   return (
     <div
-      className={className}
+      className={`${className} ${styles.arrow}`}
       style={{ ...style, display: 'block', left: '1rem', zIndex: 2 }}
       onClick={onClick}
     />
@@ -64,7 +64,7 @@ export default function PodMain({ titleColor, title, slides, tabs }) {
         <h3 className={styles.title}>{title}</h3>
         <Slider {...sliderSettings} className={styles.slider}>
           {slides[activeTab].map((slide) => (
-            <div key={slide.id}>
+            <div className={styles.slide} key={slide.id}>
               <img
                 src={slide.src}
                 alt={slide.title}

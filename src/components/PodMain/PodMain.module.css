@@ -5,7 +5,6 @@
   border-bottom-right-radius: 18px;
   background: var(--title-bg-color);
   color: #fff;
-  width: fit-content;
   font-size: 36px;
 }
 
@@ -19,19 +18,32 @@
 }
 
 .column {
-  max-width: 600px;
+  max-width: 900px;
 }
 
 .slider {
-  max-height: 70%;
+  /* max-height: 70%; */
+  /* width: 80%; */
+  width: 560px;
+  height: 583px;
+  margin: 0 auto;
+}
+
+.slide {
   width: 100%;
 }
 
 .slideImage {
-  max-width: 80%;
+  max-width: 100%;
   height: auto;
   object-fit: cover;
   margin: 0 auto;
+}
+.arrow {
+  background-color: #153415;
+  color: #000;
+  height: 100px;
+  width: 100px;
 }
 .slideTitle {
   text-align: center;
@@ -41,6 +53,7 @@
 .tabs {
   display: flex;
   margin-bottom: 10px;
+  margin-right: 56px;
   gap: 15px;
 }
 
