@@ -8,7 +8,7 @@ import Main from './pages/Main/Main';
 import RussianEquip from './pages/RussianEquip/RussianEquip';
 import ForeignEquip from './pages/ForeignEquip/ForeignEquip';
 import RussianItem from './pages/RussianItem/RussianItem';
-import Bottom from './components/Bottom/Bottom';
+import ForeignItem from './pages/ForeignItem/ForeignItem';
 import Hidden from './components/Hidden/Hidden';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -35,7 +35,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/foreign-item/:id/:tab',
-    element: <RussianItem />,
+    element: <ForeignItem />,
   },
   {
     path: '/hidden',
