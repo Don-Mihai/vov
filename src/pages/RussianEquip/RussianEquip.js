@@ -396,6 +396,7 @@ const RussianEquip = () => {
   return (
     <PodMain
       titleColor={'#782122'}
+      tabsColor={'#BB4042'}
       title={'РОССИЙСКОЕ ВООРУЖЕНИЕ'}
       slides={slidesRussian}
       tabs={tabs}
