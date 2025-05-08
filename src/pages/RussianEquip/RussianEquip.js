@@ -294,7 +294,7 @@ export const slidesRussian = [
         },
         {
             id: 4,
-            src: '/images/img2-2.jpg',
+            src: '/images/img4-2.jpg',
             title: 'ГШ-18',
             link: '/russian-item/4/2',
             description:
@@ -326,7 +326,7 @@ export const slidesRussian = [
         },
         {
             id: 7,
-            src: '/images/img5-2.jpg',
+            src: '/images/img7-2.jpg',
             title: 'АКМ',
             link: '/russian-item/7/2',
             description:
