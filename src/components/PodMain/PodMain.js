@@ -22,13 +22,7 @@ function PrevArrow({ className, style, onClick }) {
   );
 }
 
-export default function PodMain({
-  titleColor,
-  tabsColor,
-  title,
-  slides,
-  tabs,
-}) {
+export default function PodMain({ titleColor, tabsColor, title, slides, tabs }) {
   const navigate = useNavigate();
   const [currentSlide, setCurrentSlide] = useState(0);
   const [activeTab, setActiveTab] = useState(tabs[0].id);
@@ -61,51 +55,30 @@ export default function PodMain({
   };
   console.log(slides, activeTab);
   return (
-    <div
-      className={'container'}
-      style={{ '--title-bg-color': titleColor, '--tabs-bg-color': tabsColor }}
-    >
+    <div className={'container'} style={{ '--title-bg-color': titleColor, '--tabs-bg-color': tabsColor }}>
       <div className={'leftColumn' + ' ' + styles.column}>
         <h3 className={styles.title}>{title}</h3>
         <Slider {...sliderSettings} className={styles.slider}>
           {slides[activeTab].map((slide) => (
             <div className={styles.slideCont} key={slide.id}>
               <div className={styles.slide} key={slide.id}>
-                <img
-                  src={slide.src}
-                  alt={slide.title}
-                  className={styles.slideImage}
-                  onClick={() => handleSlideClick(slide.link)}
-                />
+                <img src={slide.src} alt={slide?.title} className={styles.slideImage} onClick={() => handleSlideClick(slide.link)} />
               </div>
-              <button
-                onClick={() => handleSlideClick(slide.link)}
-                className={styles.buttonDetail}
-              >
+              <button onClick={() => handleSlideClick(slide.link)} className={styles.buttonDetail}>
                 Подробнее
               </button>
             </div>
           ))}
         </Slider>
         {/* <button className={styles.buttonDetail}>Подробнее</button> */}
-        <h2 className={styles.slideTitle}>
-          {slides[activeTab][currentSlide].title}
-        </h2>
+        <h2 className={styles.slideTitle}>{slides[activeTab][currentSlide]?.title}</h2>
       </div>
 
       <div className={'rightColumn'}>
-        <h3 className={styles.subtitle}>
-          выберите раздел, чтобы узнать подробнее
-        </h3>
+        <h3 className={styles.subtitle}>выберите раздел, чтобы узнать подробнее</h3>
         <div className={styles.tabs}>
           {tabs.map((tab) => (
-            <button
-              key={tab.id}
-              className={`${styles.tabButton} ${
-                activeTab === tab.id ? styles.activeTab : ''
-              }`}
-              onClick={() => setActiveTab(tab.id)}
-            >
+            <button key={tab.id} className={`${styles.tabButton} ${activeTab === tab.id ? styles.activeTab : ''}`} onClick={() => setActiveTab(tab.id)}>
               {tab.label}
             </button>
           ))}

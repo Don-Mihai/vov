@@ -11,6 +11,9 @@ import RussianItem from './pages/RussianItem/RussianItem';
 import ForeignItem from './pages/ForeignItem/ForeignItem';
 import Hidden from './components/Hidden/Hidden';
 
+// 1. Глобально отключаем контекстное меню (правый клик и долгий тап)
+document.addEventListener('contextmenu', (e) => e.preventDefault());
+
 const root = ReactDOM.createRoot(document.getElementById('root'));
 const router = createBrowserRouter([
   {

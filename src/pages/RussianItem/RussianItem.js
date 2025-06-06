@@ -4,16 +4,8 @@ import { slidesRussian } from '../RussianEquip/RussianEquip';
 
 const RussianItem = () => {
   const { id, tab } = useParams();
-  console.log(id);
-  const item = slidesRussian[tab].find((item) => item.id === Number(id));
-  return (
-    <ItemEquip
-      titleColor={'#782122'}
-      title={item.title}
-      src={item.src}
-      description={item.description}
-    />
-  );
+  const item = slidesRussian[tab].find((item) => item.id === Number(id)) || {};
+  return <ItemEquip titleColor={'#782122'} title={item?.title} src={item?.src} description={item?.description} />;
 };
 
 export default RussianItem;
